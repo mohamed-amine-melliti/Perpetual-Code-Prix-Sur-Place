@@ -25,10 +25,11 @@
 */
 $sql = array();
 
-$sql[] = 'CREATE TABLE IF NOT EXISTS `' . _DB_PREFIX_ . 'evaluation_perpetual_code` (
-    `id_evaluation_perpetual_code` int(11) NOT NULL AUTO_INCREMENT,
-    PRIMARY KEY  (`id_evaluation_perpetual_code`)
-) ENGINE=' . _MYSQL_ENGINE_ . ' DEFAULT CHARSET=utf8;';
+$sql = "CREATE TABLE IF NOT EXISTS `" . _DB_PREFIX_ . "product_prix_sur_place` (
+            `id_product` INT(11) NOT NULL,
+            `prix_sur_place` DECIMAL(20,6) NOT NULL DEFAULT '0.000000',
+            PRIMARY KEY (`id_product`)
+        ) ENGINE=" . _MYSQL_ENGINE_ . " DEFAULT CHARSET=utf8;";
 
 foreach ($sql as $query) {
     if (Db::getInstance()->execute($query) == false) {
