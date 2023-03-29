@@ -1,13 +1,37 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+
+<?xml version="1.0" encoding="UTF-8"?>
 <module>
-	<name>evaluation_perpetual_code</name>
-	<displayName><![CDATA[Perpetual Code]]></displayName>
-	<version><![CDATA[1.0.0]]></version>
-	<description><![CDATA[evaluation code for ppt code]]></description>
-	<author><![CDATA[mohamed amine]]></author>
-	<tab><![CDATA[administration]]></tab>
-	<is_configurable>1</is_configurable>
-	<need_instance>1</need_instance>
+<name>evaluation_perpetual_code</name>
+<displayName><![CDATA[Perpetual Code]]></displayName>
+<version><![CDATA[1.0.0]]></version>
+<description><![CDATA[evaluation code for ppt code]]></description>
+<author><![CDATA[mohamed amine]]></author>
+<tab><![CDATA[front_office_features]]></tab>
+<dependencies>
+
+	<override>
+		<controller class="ProductController" override="true" file="override/controllers/front/ProductController.php" />
+		<class name="Product" override="true" file="override/classes/Product.php" />
+	</override>
+
+	<php>
+		<min>5.6.0</min>
+	</php>
+	<prestashop>
+		<min>1.7.0.0</min>
+		<max>1.7.9.9</max>
+	</prestashop>
+</dependencies>
+<override>
+	<controller class="ProductController" override="true" file="override/controllers/front/ProductController.php" />
+	<class name="Product" override="true" file="override/classes/Product.php" />
+</override>
+<hooks>
+	<hook name="displayAdminProductsExtra" />
+	<hook name="displayAdminProductsMainStepLeftColumnBottom" />
+	<hook name="displayAdminProductsMainStepLeftColumnMiddle" />
+	<hook name="displayAdminProductsMainStepRightColumnBottom" />
+	<hook name="displayAdminProductsMainStepRightColumnMiddle" />
+	<hook name="displayAdminProductsPriceStepBottom" />
+</hooks>
 </module>
-
-
